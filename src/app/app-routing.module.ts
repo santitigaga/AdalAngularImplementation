@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-const routes: Routes = [];
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+const routes: Routes = [
+{ path: '', component: HomeComponent, canActivate: [AdalGuard] },
+  { path: '**', component: NotFoundComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
